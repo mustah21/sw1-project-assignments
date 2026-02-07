@@ -30,7 +30,7 @@ public class CalculatorTest { // The class name must end with Test
     public void testAdd() {
         calculator.add(1);
         calculator.add(2);
-        assertEquals(4, calculator.getResult(), "The sum of numbers 1 and 2 is incorrect");
+        assertEquals(3, calculator.getResult(), "The sum of numbers 1 and 2 is correct");
     }
 
     @Test
@@ -45,7 +45,7 @@ public class CalculatorTest { // The class name must end with Test
     public void testDivide() {
         calculator.add(8);
         calculator.divide(2);
-        assertEquals(5, calculator.getResult(), "Division 8/2 is incorrect");
+        assertEquals(4, calculator.getResult(), "Division 8/2 is correct");
     }
 
     // The correct result of this test is that division by zero throws an exception,
@@ -59,8 +59,10 @@ public class CalculatorTest { // The class name must end with Test
     }
 
     @Test
-    @Disabled("NOTE – The multiply() method is not implemented yet and should not be run")
     public void testMultiply() {
-        fail("TEST HAS NOT BEEN IMPLEMENTED YET");
+        calculator.add(2);
+        calculator.multiply(2);
+        assertEquals(4, calculator.getResult(), "Ans is correct");
+
     }
 }
