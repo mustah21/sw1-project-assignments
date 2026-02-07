@@ -5,4 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/junit-tests/src/test/java" isTestSource="true" />
     </content>
   </component>
+  <component name="PMD-X-Module" serialisationVersion="1">
+    <option name="activeLocationsIds" />
+  </component>
 </module>
