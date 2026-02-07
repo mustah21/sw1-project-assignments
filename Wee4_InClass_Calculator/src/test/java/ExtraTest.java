@@ -2,15 +2,8 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
-import calc.Calculator;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.AbstractParent;
+import org.junit.jupiter.api.*;
 
 public class ExtraTest extends AbstractParent {
 
@@ -57,13 +50,13 @@ public class ExtraTest extends AbstractParent {
 
     @Test
     public void testSquareRoot2() {
-        calculator.squareRoot(2);
-        // Add assertXXX() here, expected result should be (int) Math.sqrt(2)
+        calculator.squareRoot(4);
+        assertEquals(2, calculator.getResult(), DELTA, "Should be 2");
     }
 
     @Test
     @DisplayName("Test negative square root")
     public void testSquareRootNegative() {
-        fail("TEST HAS NOT BEEN IMPLEMENTED YET.");
+        assertThrows(IllegalArgumentException.class, () -> calculator.squareRoot(-1));
     }
 }

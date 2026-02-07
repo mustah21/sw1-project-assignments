@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Assignments.iml" filepath="$PROJECT_DIR$/.idea/Assignments.iml" />
       <module fileurl="file://$PROJECT_DIR$/junit-tests.iml" filepath="$PROJECT_DIR$/junit-tests.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Wee4_InClass_Calculator/untitled.iml" filepath="$PROJECT_DIR$/Wee4_InClass_Calculator/untitled.iml" />
     </modules>
   </component>
 </project>

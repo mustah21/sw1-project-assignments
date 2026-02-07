@@ -1,4 +1,4 @@
-package calc;
+
 
 public class Calculator {
 
@@ -17,7 +17,7 @@ public class Calculator {
     }
 
     public void subtract(int n) {
-        result = result - 1;
+        result = result - n;
     }
 
     public void multiply(int n) {
@@ -34,15 +34,17 @@ public class Calculator {
     }
 
     public void squareRoot(int n) {
+        if  (n < 0) throw new IllegalArgumentException("Cannot square root a number less than zero");
         result = (int) Math.sqrt(n);
     }
 
     public void powerOn() {
-        reset();
+        // Initial actions could be placed here
+        result = 0;
     }
 
     public void powerOff() {
-        reset();
+        result = 0;
     }
 
 }

@@ -1,4 +1,4 @@
-package calc.example;
+package examples.example;
 
 public class TemperatureConverter {
 

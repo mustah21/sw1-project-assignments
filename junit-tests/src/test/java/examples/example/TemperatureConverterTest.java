@@ -1,4 +1,4 @@
-package calc.example;
+package examples.example;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
