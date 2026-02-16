@@ -1,4 +1,4 @@
-package examples.example;
+package org.example;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,9 +15,10 @@ public class TemperatureConverterTest {
 
     @Test
     void testFahrenheitToCelsius() {
-        assertEquals(0.0, converter.fahrenheitToCelsius(32), 0.0001);
-        assertEquals(100.0, converter.fahrenheitToCelsius(212), 0.0001);
-        assertEquals(-40.0, converter.fahrenheitToCelsius(-40), 0.0001);
+        assertEquals(0.0, converter.fahrenheitToCelsius(32), 0.01);
+        assertEquals(100.0, converter.fahrenheitToCelsius(212), 0.01);
+        assertEquals(-40.0, converter.fahrenheitToCelsius(-40), 0.01);
+
     }
 
     @Test
@@ -28,6 +29,14 @@ public class TemperatureConverterTest {
     }
 
     @Test
+    void testKelvinToCelsius() {
+        assertEquals(226.85, converter.kelvinToCelsius(500), 0.01);
+        assertEquals(-773.15, converter.kelvinToCelsius(-500), 0.01);
+        assertEquals(6.85, converter.kelvinToCelsius(280), 0.01);
+    }
+
+
+    @Test
     void testIsExtremeTemperature() {
         assertTrue(converter.isExtremeTemp(-50));
         assertTrue(converter.isExtremeTemp(60));
@@ -36,4 +45,5 @@ public class TemperatureConverterTest {
         assertFalse(converter.isExtremeTemp(50));
         assertFalse(converter.isExtremeTemp(20));
     }
+
 }

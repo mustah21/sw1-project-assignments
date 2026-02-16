@@ -1,4 +1,4 @@
-package examples.example;
+package org.example;
 
 public class TemperatureConverter {
 
@@ -11,9 +11,13 @@ public class TemperatureConverter {
     boolean isExtremeTemp(double celsius){
         return celsius < -40 || celsius > 50;
     }
+    double kelvinToCelsius(double kelvin){
+        return kelvin - 273.15;
+    }
+
 
 //    static void main(String[] args) {
-//        TemperatureConverter tc = new TemperatureConverter();
+//        TeeratureConverter tc = new TemperatureConverter();
 //        System.out.printf( "Celsius to fahrenheit: %.1f%n" , tc.celsiusToFahrenheit(20));
 //        System.out.printf( "Fahrenheit to celsius: %.1f%n" , tc.fahrenheitToCelsius(100));
 //        System.out.println("Is 25 degree celsius extreme temp: " + tc.isExtremeTemp(25));
