@@ -11,28 +11,28 @@ pipeline {
         }
         stage('Build') {
             steps {
-                dir('week4-inclass') {
+                dir('week6-speed') {
                     bat 'mvn clean install'
                 }
             }
         }
         stage('Test') {
             steps {
-                dir('week4-inclass') {
+                dir('week6-speed') {
                     bat 'mvn test'
                 }
             }
         }
         stage('Code Coverage') {
             steps {
-                dir('week4-inclass') {
+                dir('week6-speed') {
                     bat 'mvn jacoco:report'
                 }
             }
         }
         stage('Publish Test Results') {
             steps {
-                junit 'week4-inclass/**/target/surefire-reports/*.xml'
+                junit 'week6-speed/**/target/surefire-reports/*.xml'
             }
         }
     }
