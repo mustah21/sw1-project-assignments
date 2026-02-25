@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'maven'
-        jdk 'jdk-17'
+        jdk 'jdk-21'
     }
 
     environment {
@@ -34,13 +34,7 @@ pipeline {
                 }
             }
         }
-        stage('Code Coverage') {
-            steps {
-                dir('week4-inclass') {
-                    bat 'mvn jacoco:report'
-                }
-            }
-        }
+
         stage('Publish Test Results') {
             steps {
                 junit 'week4-inclass/**/target/surefire-reports/*.xml'
