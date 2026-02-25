@@ -1,12 +1,12 @@
 pipeline {
     agent any
     tools {
-        maven 'maven',
+        maven 'maven'
         jdk 'jdk-17'
     }
 
     environment {
-        PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;"
+        PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
         DOCKERHUB_CREDENTIALS_ID = 'docker-hub'
         DOCKERHUB_REPO = 'mustah21/week6-speed'
         DOCKER_IMAGE_TAG = 'v1'
