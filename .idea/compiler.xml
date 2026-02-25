@@ -14,6 +14,7 @@
       <module name="untitled" target="1.8" />
       <module name="week1-Junit-Tests" target="1.8" />
       <module name="week6-speed" target="1.8" />
+      <module name="week6-speed2" target="1.8" />
       <module name="weekinclass" target="1.8" />
     </bytecodeTargetLevel>
   </component>

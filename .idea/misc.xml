@@ -14,6 +14,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/week6-speed/pom.xml" />
+        <option value="$PROJECT_DIR$/week6-speed2/pom.xml" />
       </set>
     </option>
   </component>
