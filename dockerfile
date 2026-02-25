@@ -1,4 +1,4 @@
-FROM maven:3.8.1-jdk-21
+FROM maven:3.9.6-eclipse-temurin-21
 
 LABEL authors="mustah21"
 
