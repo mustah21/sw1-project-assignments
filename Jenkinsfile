@@ -8,7 +8,7 @@ pipeline {
     environment {
         PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
         DOCKERHUB_CREDENTIALS_ID = 'docker-hub'
-        DOCKERHUB_REPO = 'mustah21/week6-speed'
+        DOCKERHUB_REPO = 'mustah21/week4-inclass'
         DOCKER_IMAGE_TAG = 'v1'
     }
 
@@ -22,21 +22,21 @@ pipeline {
         }
         stage('Build') {
             steps {
-                dir('week6-speed') {
+                dir('week4-inclass') {
                     bat 'mvn clean install'
                 }
             }
         }
         stage('Test') {
             steps {
-                dir('week6-speed') {
+                dir('week4-inclass') {
                     bat 'mvn test'
                 }
             }
         }
         stage('Code Coverage') {
             steps {
-                dir('week6-speed') {
+                dir('week4-inclass') {
                     bat 'mvn jacoco:report'
                 }
             }
