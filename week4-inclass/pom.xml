@@ -87,7 +87,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>TimeCal</mainClass>
+                            <mainClass>Calculator</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

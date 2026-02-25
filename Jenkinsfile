@@ -3,33 +3,38 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/mustah21/sw1-project-assignments.git'
+                git 'https://github.com/mustah21/sw1-project-assignments'
+
             }
         }
         stage('Build') {
             steps {
-                bat 'mvn clean install' // sh for linux and ios
+                dir('week4-inclass') {
+                    bat 'mvn clean install'
+                }
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test'
+                dir('week4-inclass') {
+                    bat 'mvn test'
+                }
             }
         }
         stage('Code Coverage') {
-            steps {
-                bat 'mvn jacoco:report'
+            steps
+            dir('week4-inclass') {
+                {
+                    bat 'mvn jacoco:report'
+                }
             }
         }
+
         stage('Publish Test Results') {
             steps {
                 junit '**/target/surefire-reports/*.xml'
             }
         }
-        stage('Publish Coverage Report') {
-            steps {
-                @jacoco()
-            }
-        }
+
     }
 }
