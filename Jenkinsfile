@@ -43,7 +43,7 @@ pipeline {
         }
         stage('Publish Test Results') {
             steps {
-                junit 'week6-speed/**/target/surefire-reports/*.xml'
+                junit 'week4-inclass/**/target/surefire-reports/*.xml'
             }
         }
 
