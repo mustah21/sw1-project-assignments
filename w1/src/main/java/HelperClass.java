@@ -27,7 +27,7 @@ public class HelperClass {
                 messages.getString("menu.addItem"),
                 messages.getString("menu.removeItem"),
                 messages.getString("menu.getTotal"),
-                messages.getString("menu.chooseLanguage"),
+                messages.getString("menu.changeLanguage"),
                 messages.getString("menu.exit")
         };
     }
