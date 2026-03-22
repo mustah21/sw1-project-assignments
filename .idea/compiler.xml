@@ -24,7 +24,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="w1" options="--add-exports jdk.compiler/com.sun.tools.javac.resources=ALL-UNNAMED" />
+      <module name="w1" options="" />
     </option>
   </component>
 </project>

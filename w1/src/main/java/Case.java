@@ -11,7 +11,7 @@ public class Case {
 
     public void userAction() {
 
-        System.out.print("Choose language/valitse kieli/välja språk/言語を選択してください (en/fi/sv/ja): ");
+        System.out.print("Choose language/valitse kieli/välja språk/言語を選択してください (en/fi/sv/ja/ur): ");
         String lang = scan.nextLine();
         helper.setLocale(lang);
 
