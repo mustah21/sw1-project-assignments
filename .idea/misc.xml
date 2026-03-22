@@ -6,9 +6,12 @@
       <list>
         <option value="$PROJECT_DIR$/junit-tests/pom.xml" />
         <option value="$PROJECT_DIR$/Wee4_InClass_Calculator/pom.xml" />
-        <option value="$PROJECT_DIR$/week4-inclass/pom.xml" />
         <option value="$PROJECT_DIR$/week6-speed/pom.xml" />
         <option value="$PROJECT_DIR$/week6-speed2/pom.xml" />
+        <option value="$PROJECT_DIR$/week7-inclass/pom.xml" />
+        <option value="$PROJECT_DIR$/week1/pom.xml" />
+        <option value="$PROJECT_DIR$/two/week1/pom.xml" />
+        <option value="$PROJECT_DIR$/w1/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
