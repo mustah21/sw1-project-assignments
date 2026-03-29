@@ -1,3 +1,5 @@
+package one;
+
 import java.util.HashMap;
 
 public class ShoppingCart {
@@ -28,7 +30,19 @@ public class ShoppingCart {
             totalBill += i.getTotal();
         }
         return totalBill;
-
     }
+
+    public String displayBill() {
+        StringBuilder sb = new StringBuilder();
+        for (HashMap.Entry<String, Item> entry : cart.entrySet()) {
+            sb.append(entry.getKey())
+                    .append(": ")
+                    .append(entry.getValue().getTotal())
+                    .append("  ");
+        }
+        sb.append("| Total: ").append(getTotalBill());
+        return sb.toString();
+    }
+
 }
 

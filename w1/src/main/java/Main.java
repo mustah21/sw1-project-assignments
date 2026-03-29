@@ -1,7 +1,8 @@
+import one.Gui;
+
 public class Main {
     public static void main(String[] args) {
-        Case myCase = new Case();
+        Gui.launch(Gui.class, args);
 
-        myCase.userAction();
     }
 }
