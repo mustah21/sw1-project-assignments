@@ -6,7 +6,6 @@ public class ShoppingCart {
 
     HashMap<String, Item> cart;
 
-
     public ShoppingCart() {
         this.cart = new HashMap<>();
     }
@@ -17,6 +16,15 @@ public class ShoppingCart {
 
     public void removeItem(String name) {
         cart.remove(name);
+    }
+
+    public HashMap<String, Item> getCart() {
+        return cart;
+    }
+
+    public int totalItems() {
+        int total = 0;
+        return total = cart.size();
     }
 
     // just in case for printing

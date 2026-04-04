@@ -1,42 +1,30 @@
 package one;
 
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class HelperClass {
 
-    public ResourceBundle messages;
-    private Scanner scan = new Scanner(System.in);
+    private String currentLocale = "en";
+    private LocalizationService localizationService;
+    private Map<String, String> messages;
 
-    public HelperClass() {
-        messages = ResourceBundle.getBundle("messages");
+    public HelperClass(MariaDbConnection dbConnection) {
+        this.localizationService = new LocalizationService(dbConnection);
+        messages = localizationService.getUIMessages("en");
     }
 
     public String getMessage(String key) {
-        return messages.getString(key);
+        return messages.getOrDefault(key, key);
     }
-
-//    public int readUserChoice(String[] options) {
-//        System.out.println("\n" + messages.getString("menu.selectOption"));
-//        for (int i = 1; i <= options.length; i++) {
-//            System.out.println(i + ". " + options[i - 1]);
-//        }
-//        return scan.nextInt();
-//    }
-//
-//    public String[] buildOptions() {
-//        return new String[]{
-//                messages.getString("menu.addItem"),
-//                messages.getString("menu.removeItem"),
-//                messages.getString("menu.getTotal"),
-//                messages.getString("menu.changeLanguage"),
-//                messages.getString("menu.exit")
-//        };
-//    }
 
     public void setLocale(String lang) {
-        messages = Local.getBundle(lang);
+        this.currentLocale = lang;
+        messages = localizationService.getUIMessages(lang);
     }
-
+    public String getCurrentLocale() {
+        return currentLocale;
+    }
 
 }

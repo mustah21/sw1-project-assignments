@@ -17,8 +17,10 @@ import javafx.geometry.Pos;
 
 public class Gui extends Application {
 
-    private final HelperClass helper = new HelperClass();
+    private final MariaDbConnection dbConnection = new MariaDbConnection();
+    private final HelperClass helper = new HelperClass(dbConnection);
     private final ShoppingCart shoppingCart = new ShoppingCart();
+    private CartService cartService = new CartService(dbConnection);
 
     private TextField nameField = new TextField();
     private TextField priceField = new TextField();
@@ -121,7 +123,11 @@ public class Gui extends Application {
         HBox resultRow = new HBox(resultLabel);
         resultRow.setPadding(new Insets(0, 16, 12, 16));
 
-        getResult.setOnAction(e -> resultLabel.setText(helper.getMessage("total.bill") + shoppingCart.getTotalBill()));
+        getResult.setOnAction(e ->{
+            resultLabel.setText(helper.getMessage("total.bill") + shoppingCart.getTotalBill());
+            cartService.saveCart(shoppingCart, helper.getCurrentLocale());
+            System.out.println(shoppingCart.getItems());
+        });
         displayButton.setOnAction(e -> resultLabel.setText(shoppingCart.displayBill()));
 
         updateUI();
