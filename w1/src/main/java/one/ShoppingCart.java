@@ -1,6 +1,7 @@
 package one;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class ShoppingCart {
 
@@ -17,18 +18,8 @@ public class ShoppingCart {
     public void removeItem(String name) {
         cart.remove(name);
     }
-
-    public HashMap<String, Item> getCart() {
-        return cart;
-    }
-
-    public int totalItems() {
-        int total = 0;
-        return total = cart.size();
-    }
-
     // just in case for printing
-    public HashMap<String, Item> getItems() {
+    public Map<String, Item> getItems() {
         return cart;
     }
 
@@ -42,7 +33,7 @@ public class ShoppingCart {
 
     public String displayBill() {
         StringBuilder sb = new StringBuilder();
-        for (HashMap.Entry<String, Item> entry : cart.entrySet()) {
+        for (Map.Entry<String, Item> entry : cart.entrySet()) {
             sb.append(entry.getKey())
                     .append(": ")
                     .append(entry.getValue().getTotal())
