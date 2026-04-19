@@ -6,6 +6,9 @@ import one.HelperClass;
 import one.MariaDbConnection;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class HelperClassTest {
@@ -13,14 +16,15 @@ class HelperClassTest {
     // We'll use a mock or a real LocalizationService.
     // For simple tests, we can create a minimal mock.
 
-    private MariaDbConnection dbConnection;
-    private HelperClass helper;
 
-//    @BeforeEach
-//    void setUp() {
-//        dbConnection = MariaDbConnection().getConnection(); // assuming this works in test env
-//        helper = new HelperClass(dbConnection);
-//    }
+    private HelperClass helper;
+    private Connection dbConnection;
+
+    @BeforeEach
+    void setUp() throws SQLException {
+        dbConnection = MariaDbConnection.getConnection();
+        helper = new HelperClass(dbConnection);
+    }
 
     @Test
     void testDefaultLocaleIsEnglish() {

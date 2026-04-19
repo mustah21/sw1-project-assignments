@@ -42,7 +42,7 @@ class CartServiceTest {
             when(generatedKeys.next()).thenReturn(true);
             when(generatedKeys.getInt(1)).thenReturn(1);
 
-            CartService service = new CartService(dbConnection);
+            CartService service = new CartService(MariaDbConnection.getConnection());
             service.saveCart(cart, "en");
 
             verify(cartStmt).executeUpdate();
