@@ -16,11 +16,11 @@ class HelperClassTest {
     private MariaDbConnection dbConnection;
     private HelperClass helper;
 
-    @BeforeEach
-    void setUp() {
-        dbConnection = new MariaDbConnection(); // assuming this works in test env
-        helper = new HelperClass(dbConnection);
-    }
+//    @BeforeEach
+//    void setUp() {
+//        dbConnection = MariaDbConnection().getConnection(); // assuming this works in test env
+//        helper = new HelperClass(dbConnection);
+//    }
 
     @Test
     void testDefaultLocaleIsEnglish() {

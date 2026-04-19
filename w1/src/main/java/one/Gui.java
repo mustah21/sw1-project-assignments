@@ -15,11 +15,13 @@ import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 
+import java.sql.Connection;
+
 public class Gui extends Application {
 
-    private final MariaDbConnection dbConnection = new MariaDbConnection();
-    private final HelperClass helper = new HelperClass(dbConnection);
-    private final ShoppingCart shoppingCart = new ShoppingCart();
+    private Connection dbConnection;
+    private HelperClass helper = new HelperClass(dbConnection);
+    private ShoppingCart shoppingCart = new ShoppingCart();
     private CartService cartService = new CartService(dbConnection);
 
     private TextField nameField = new TextField();
@@ -51,7 +53,9 @@ public class Gui extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        dbConnection = MariaDbConnection.getConnection(); // no cast
+        helper = new HelperClass(dbConnection);
+        cartService = new CartService(dbConnection);
 
         HBox langBar = getHBox();
 

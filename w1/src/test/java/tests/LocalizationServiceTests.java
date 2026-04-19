@@ -35,7 +35,7 @@ class LocalizationServiceTests {
             when(resultSet.getString("key")).thenReturn("hello", "bye");
             when(resultSet.getString("value")).thenReturn("Hello", "Goodbye");
 
-            LocalizationService service = new LocalizationService(dbConnection);
+            LocalizationService service = new LocalizationService((Connection) dbConnection);
             Map<String, String> result = service.getUIMessages("en");
 
             assertEquals(2, result.size());

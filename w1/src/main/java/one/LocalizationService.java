@@ -9,9 +9,9 @@ import java.util.Map;
 
 public class LocalizationService {
 
-    private final MariaDbConnection dbConnection;
+    private Connection dbConnection;
 
-    public LocalizationService(MariaDbConnection dbConnection) {
+    public LocalizationService(Connection dbConnection) {
         this.dbConnection = dbConnection;
     }
 

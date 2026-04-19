@@ -5,14 +5,14 @@ import java.util.Map;
 
 public class CartService {
 
-    private MariaDbConnection dbConnection;
+    private Connection dbConnection;
 
-    public CartService(MariaDbConnection dbConnection) {
+    public CartService(Connection dbConnection) {
         this.dbConnection = dbConnection;
     }
 
     public void saveCart(ShoppingCart cart, String language) {
-        try (Connection conn = dbConnection.getConnection()) {
+        try (Connection conn = MariaDbConnection.getConnection()) {
             int cartRecordId = saveCart(conn, cart.getItems().size(), cart.getTotalBill(), language);
 
             for (Map.Entry<String, Item> entry : cart.getItems().entrySet()) {

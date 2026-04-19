@@ -1,5 +1,6 @@
 package one;
 
+import java.sql.Connection;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -9,8 +10,9 @@ public class HelperClass {
     private String currentLocale = "en";
     private LocalizationService localizationService;
     private Map<String, String> messages;
+    private Connection dbConnection;
 
-    public HelperClass(MariaDbConnection dbConnection) {
+    public HelperClass(Connection dbConnection) {
         this.localizationService = new LocalizationService(dbConnection);
         messages = localizationService.getUIMessages("en");
     }
