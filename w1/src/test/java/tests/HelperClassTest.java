@@ -13,10 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HelperClassTest {
 
-    // We'll use a mock or a real LocalizationService.
-    // For simple tests, we can create a minimal mock.
-
-
     private HelperClass helper;
     private Connection dbConnection;
 
